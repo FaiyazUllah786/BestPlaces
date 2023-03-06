@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 
+import '../widgets/location_input.dart';
+
 class AddPlaceScreen extends StatefulWidget {
   static const routeName = '/addPlacesScreen';
   const AddPlaceScreen({super.key});
@@ -46,13 +48,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
                       controller: _titleController,
                     ),
-                    SizedBox(),
+                    SizedBox(height: 10),
                     ImageInput(onSelectImage: _selectImage),
+                    SizedBox(height: 10),
+                    LocationInput(),
                   ],
                 ),
               ),

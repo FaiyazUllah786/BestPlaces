@@ -35,16 +35,29 @@ class PlacesListScreen extends StatelessWidget {
                         );
                       } else {
                         return ListView.builder(
-                            itemCount: bestPlaces.items.length,
-                            itemBuilder: (ctx, i) => Container(
-                                  padding: EdgeInsets.all(10),
-                                  height: 300,
-                                  width: double.infinity,
-                                  child: Image.file(
-                                    bestPlaces.items[i].image,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ));
+                          itemCount: bestPlaces.items.length,
+                          // itemBuilder: (ctx, i) => Container(
+                          //   padding: EdgeInsets.all(10),
+                          //   height: 300,
+                          //   width: double.infinity,
+                          //   child: Image.file(
+                          //     bestPlaces.items[i].image,
+                          //     fit: BoxFit.cover,
+                          //   ),
+                          // ),
+                          itemBuilder: (ctx, i) => Container(
+                            padding: EdgeInsets.all(10),
+                            height: 300,
+                            width: double.infinity,
+                            child: Card(
+                              elevation: 5,
+                              child: Image.file(
+                                bestPlaces.items[i].image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        );
                       }
                     }),
         ));
